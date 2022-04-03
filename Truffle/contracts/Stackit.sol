@@ -216,7 +216,7 @@ contract REFLECT is Context, IERC20, Ownable {
     }
 
     function _getTValues(uint256 tAmount) private pure returns (uint256, uint256) {
-        uint256 tFee = tAmount.div(100);
+        uint256 tFee = tAmount.div(10); // this will reflect 10% rather than 1%
         uint256 tTransferAmount = tAmount.sub(tFee);
         return (tTransferAmount, tFee);
     }
