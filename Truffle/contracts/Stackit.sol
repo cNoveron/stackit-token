@@ -26,8 +26,8 @@ contract REFLECT is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = 'reflect.finance';
-    string private _symbol = 'RFI';
+    string private _name = 'Stackit Token';
+    string private _symbol = 'STACK';
     uint8 private _decimals = 9;
 
     constructor () public {
