@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = process.env.INFURA_PROJECT_ID;
-const ganacheKeyPhrase = process.env.GANACHE_KEY_PHRASE;
+const ropstenPrivateKey = process.env.ROPSTEN_PRIVATE_KEY;
 
 module.exports = {
   // Uncommenting the defaults below
@@ -20,7 +20,7 @@ module.exports = {
       deploymentPollingInterval: 10,
     },
     ropsten: {
-      provider: () => new HDWalletProvider(ganacheKeyPhrase, `https://ropsten.infura.io/v3/${infuraKey}`),
+      provider: () => new HDWalletProvider([ropstenPrivateKey], `https://ropsten.infura.io/v3/${infuraKey}`),
       network_id: 3,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
