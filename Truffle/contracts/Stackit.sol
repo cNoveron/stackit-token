@@ -10,7 +10,7 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/utils/Address.sol";
 import "openzeppelin-solidity/contracts/access/Ownable.sol";
 
-contract REFLECT is Context, IERC20, Ownable {
+contract Stackit is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
