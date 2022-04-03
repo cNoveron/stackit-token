@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = process.env.INFURA_PROJECT_ID;
@@ -20,7 +20,7 @@ module.exports = {
       deploymentPollingInterval: 10,
     },
     ropsten: {
-      provider: () => new HDWalletProvider([ropstenPrivateKey], `https://ropsten.infura.io/v3/${infuraKey}`),
+      provider: () => new HDWalletProvider({ privateKeys: [ropstenPrivateKey], url: `https://ropsten.infura.io/v3/${infuraKey}` }),
       network_id: 3,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
@@ -28,6 +28,9 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
   },
+  compilers: {
+    solc: { version: '^0.6.0' }
+  }
   //
   // Truffle DB is currently disabled by default; to enable it, change enabled:
   // false to enabled: true. The default storage location can also be
