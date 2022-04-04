@@ -2,13 +2,13 @@
  * Copyright © 2020 reflect.finance. ALL RIGHTS RESERVED.
  */
 
-pragma solidity ^0.6.2;
+pragma solidity ^0.8.0;
 
-import "openzeppelin-solidity/contracts/GSN/Context.sol";
-import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "openzeppelin-solidity/contracts/utils/Address.sol";
-import "openzeppelin-solidity/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Context.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Stackit is Context, IERC20, Ownable {
     using SafeMath for uint256;
