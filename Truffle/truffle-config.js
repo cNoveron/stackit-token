@@ -29,8 +29,9 @@ module.exports = {
     },
   },
   compilers: {
-    solc: { version: '^0.6.0' }
-  }
+    solc: { version: '^0.8.0' }
+  },
+  plugins: ["verify-on-etherscan"]
   //
   // Truffle DB is currently disabled by default; to enable it, change enabled:
   // false to enabled: true. The default storage location can also be
